@@ -1,24 +1,25 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
+import 'package:path/path.dart';
 import 'package:twitch_clone/src/data/model/livechat/livechat_model.dart';
 import 'package:twitch_clone/src/utils/firebase_provider.dart';
 import 'package:twitch_clone/src/utils/utils.dart';
 
-const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI0NThlN2ZiZS0xNmQ3LTRiZWEtOTg2YS1kZDMzN2ViZTE0NzgiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTcxNDcyODc4MywiZXhwIjoxNzQ2MjY0NzgzfQ.p1_CaWqwG3q0A_-eRvZStLDByhl6xcy-LLf3s7X5NNE';
-
 @injectable
 class Livestreamrepository {
-  final Dio _dio = Dio();
   final CollectionReference livechatstream = firebasecore.collection('message');
 
-  Future<Either<Exception, dynamic>> createMeeting() async {
+  Future<Either<Exception, dynamic>> createMeeting(
+      String title, int watching, XFile? image) async {
     try {
-      final res = await _dio.post('https://api.videosdk.live/v2/rooms',
+      final res = await dio.post('https://api.videosdk.live/v2/rooms',
           options: Options(headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -27,9 +28,58 @@ class Livestreamrepository {
       print(res.data);
       var data = res.data['roomId'];
       await storage.write(key: 'roomid', value: data);
+      addlive(title, watching, image, data);
       log('bwe$data');
       return right(res);
     } catch (e) {
+      return left(Exception(e));
+    }
+  }
+
+  Future<Either<Exception, bool>> addlive(
+    String title,
+    int watching,
+    XFile? image,
+    String meetingid,
+  ) async {
+    final fileName = basename(image!.path);
+    const destination = 'files/';
+    try {
+      String? username;
+      var collection = FirebaseFirestore.instance.collection('users');
+      var docSnapshot = await collection.doc(firebaseauth.currentUser!.uid ).get();
+      if (docSnapshot.exists) {
+        Map<String, dynamic>? data = docSnapshot.data();
+        var user = data?['username'];
+        username = user;
+      
+      }
+      CollectionReference addcollection = firebasecore.collection('addlive');
+      final ref = firebasestorage.ref(destination).child(fileName);
+
+      UploadTask uploadTask = ref.putFile(File(image.path));
+
+      TaskSnapshot taskSnapshot = await uploadTask;
+
+      String imageurl = await taskSnapshot.ref.getDownloadURL();
+      print(imageurl);
+      final res = await addcollection.add(
+        {
+          'title': title,
+          'watching': watching,
+          'image': imageurl,
+          'username': username,
+          'datecreated': DateTime.now(),
+          'meetingid': meetingid
+        },
+      );
+      var liveid = res.id;
+      await storage.write(key: 'liveid', value: liveid);
+
+      print('tesss$liveid');
+      return right(true);
+    } catch (e) {
+      print(e);
       return left(Exception(e));
     }
   }

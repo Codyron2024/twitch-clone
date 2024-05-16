@@ -62,7 +62,8 @@ class _HomescreenState extends State<Homescreen> {
                                 itemBuilder: (context, index) {
                                   return InkWell(
                                     onTap: () async {
-                                      log(getpost[index].liveid.toString());
+                                    
+                                         
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
                                           builder: (context) => Broadcastscreen(
@@ -100,7 +101,7 @@ class _HomescreenState extends State<Homescreen> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  getpost[index].title!,
+                                                  getpost[index].username!,
                                                   style: const TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 20,

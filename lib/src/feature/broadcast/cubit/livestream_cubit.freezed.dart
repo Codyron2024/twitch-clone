@@ -24,6 +24,7 @@ mixin _$LivestreamState {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$LivestreamState {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$LivestreamState {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$LivestreamState {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$LivestreamState {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$LivestreamState {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +148,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return initial();
   }
@@ -155,6 +162,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return initial?.call();
   }
@@ -168,6 +176,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -185,6 +194,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return initial(this);
   }
@@ -198,6 +208,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return initial?.call(this);
   }
@@ -211,6 +222,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -268,6 +280,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return loading();
   }
@@ -281,6 +294,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return loading?.call();
   }
@@ -294,6 +308,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -311,6 +326,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return loading(this);
   }
@@ -324,6 +340,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return loading?.call(this);
   }
@@ -337,6 +354,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -421,6 +439,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return success(this.success);
   }
@@ -434,6 +453,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return success?.call(this.success);
   }
@@ -447,6 +467,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -464,6 +485,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return success(this);
   }
@@ -477,6 +499,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return success?.call(this);
   }
@@ -490,6 +513,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -578,6 +602,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return error(this.error);
   }
@@ -591,6 +616,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return error?.call(this.error);
   }
@@ -604,6 +630,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -621,6 +648,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return error(this);
   }
@@ -634,6 +662,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return error?.call(this);
   }
@@ -647,6 +676,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -736,6 +766,7 @@ class _$MeetingImpl implements _Meeting {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return meetingid(meetingiddata);
   }
@@ -749,6 +780,7 @@ class _$MeetingImpl implements _Meeting {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return meetingid?.call(meetingiddata);
   }
@@ -762,6 +794,7 @@ class _$MeetingImpl implements _Meeting {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (meetingid != null) {
@@ -779,6 +812,7 @@ class _$MeetingImpl implements _Meeting {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return meetingid(this);
   }
@@ -792,6 +826,7 @@ class _$MeetingImpl implements _Meeting {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return meetingid?.call(this);
   }
@@ -805,6 +840,7 @@ class _$MeetingImpl implements _Meeting {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (meetingid != null) {
@@ -900,6 +936,7 @@ class _$LoadchatImpl implements _Loadchat {
     required TResult Function(Exception error) error,
     required TResult Function(String? meetingiddata) meetingid,
     required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
   }) {
     return loadchat(this.loadchat);
   }
@@ -913,6 +950,7 @@ class _$LoadchatImpl implements _Loadchat {
     TResult? Function(Exception error)? error,
     TResult? Function(String? meetingiddata)? meetingid,
     TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
   }) {
     return loadchat?.call(this.loadchat);
   }
@@ -926,6 +964,7 @@ class _$LoadchatImpl implements _Loadchat {
     TResult Function(Exception error)? error,
     TResult Function(String? meetingiddata)? meetingid,
     TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
     required TResult orElse(),
   }) {
     if (loadchat != null) {
@@ -943,6 +982,7 @@ class _$LoadchatImpl implements _Loadchat {
     required TResult Function(_Error value) error,
     required TResult Function(_Meeting value) meetingid,
     required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
   }) {
     return loadchat(this);
   }
@@ -956,6 +996,7 @@ class _$LoadchatImpl implements _Loadchat {
     TResult? Function(_Error value)? error,
     TResult? Function(_Meeting value)? meetingid,
     TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
   }) {
     return loadchat?.call(this);
   }
@@ -969,6 +1010,7 @@ class _$LoadchatImpl implements _Loadchat {
     TResult Function(_Error value)? error,
     TResult Function(_Meeting value)? meetingid,
     TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
     required TResult orElse(),
   }) {
     if (loadchat != null) {
@@ -984,5 +1026,168 @@ abstract class _Loadchat implements LivestreamState {
   List<Livechatmodel> get loadchat;
   @JsonKey(ignore: true)
   _$$LoadchatImplCopyWith<_$LoadchatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageloadImplCopyWith<$Res> {
+  factory _$$ImageloadImplCopyWith(
+          _$ImageloadImpl value, $Res Function(_$ImageloadImpl) then) =
+      __$$ImageloadImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({XFile? image});
+}
+
+/// @nodoc
+class __$$ImageloadImplCopyWithImpl<$Res>
+    extends _$LivestreamStateCopyWithImpl<$Res, _$ImageloadImpl>
+    implements _$$ImageloadImplCopyWith<$Res> {
+  __$$ImageloadImplCopyWithImpl(
+      _$ImageloadImpl _value, $Res Function(_$ImageloadImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_$ImageloadImpl(
+      freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as XFile?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImageloadImpl implements _Imageload {
+  const _$ImageloadImpl(this.image);
+
+  @override
+  final XFile? image;
+
+  @override
+  String toString() {
+    return 'LivestreamState.imageload(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageloadImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImageloadImplCopyWith<_$ImageloadImpl> get copyWith =>
+      __$$ImageloadImplCopyWithImpl<_$ImageloadImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(dynamic success) success,
+    required TResult Function(Exception error) error,
+    required TResult Function(String? meetingiddata) meetingid,
+    required TResult Function(List<Livechatmodel> loadchat) loadchat,
+    required TResult Function(XFile? image) imageload,
+  }) {
+    return imageload(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic success)? success,
+    TResult? Function(Exception error)? error,
+    TResult? Function(String? meetingiddata)? meetingid,
+    TResult? Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult? Function(XFile? image)? imageload,
+  }) {
+    return imageload?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(dynamic success)? success,
+    TResult Function(Exception error)? error,
+    TResult Function(String? meetingiddata)? meetingid,
+    TResult Function(List<Livechatmodel> loadchat)? loadchat,
+    TResult Function(XFile? image)? imageload,
+    required TResult orElse(),
+  }) {
+    if (imageload != null) {
+      return imageload(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Meeting value) meetingid,
+    required TResult Function(_Loadchat value) loadchat,
+    required TResult Function(_Imageload value) imageload,
+  }) {
+    return imageload(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Meeting value)? meetingid,
+    TResult? Function(_Loadchat value)? loadchat,
+    TResult? Function(_Imageload value)? imageload,
+  }) {
+    return imageload?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    TResult Function(_Meeting value)? meetingid,
+    TResult Function(_Loadchat value)? loadchat,
+    TResult Function(_Imageload value)? imageload,
+    required TResult orElse(),
+  }) {
+    if (imageload != null) {
+      return imageload(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Imageload implements LivestreamState {
+  const factory _Imageload(final XFile? image) = _$ImageloadImpl;
+
+  XFile? get image;
+  @JsonKey(ignore: true)
+  _$$ImageloadImplCopyWith<_$ImageloadImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

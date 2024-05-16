@@ -14,44 +14,6 @@ import 'package:twitch_clone/src/utils/utils.dart';
 
 @injectable
 class GoliveRepository extends ApiClient {
-  Future<Either<Exception, bool>> addlive(
-    String title,
-    int watching,
-    XFile? image,
-    String meetingid,
-  ) async {
-    final fileName = basename(image!.path);
-    const destination = 'files/';
-    try {
-      CollectionReference addcollection = firebasecore.collection('addlive');
-      final ref = firebasestorage.ref(destination).child(fileName);
-
-      UploadTask uploadTask = ref.putFile(File(image.path));
-
-      TaskSnapshot taskSnapshot = await uploadTask;
-
-      String imageurl = await taskSnapshot.ref.getDownloadURL();
-      print(imageurl);
-      final res = await addcollection.add(
-        {
-          'title': title,
-          'watching': watching,
-          'image': imageurl,
-          'userid': firebaseauth.currentUser!.uid,
-          'datecreated': DateTime.now(),
-          'meetingid': meetingid
-        },
-      );
-      var liveid = res.id;
-      await storage.write(key: 'liveid', value: liveid);
-
-      print('tesss$liveid');
-      return right(true);
-    } catch (e) {
-      print(e);
-      return left(Exception(e));
-    }
-  }
 
   Future<Either<Exception, bool>> sendmessage(
       String message, String liveid) async {

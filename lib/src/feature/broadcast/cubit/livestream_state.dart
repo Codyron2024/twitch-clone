@@ -8,6 +8,7 @@ class LivestreamState with _$LivestreamState {
   const factory LivestreamState.error(Exception error) = _Error;
   const factory LivestreamState.meetingid(String? meetingiddata) = _Meeting;
     const factory LivestreamState.loadchat(List<Livechatmodel> loadchat) = _Loadchat;
+   const factory LivestreamState.imageload(XFile? image) = _Imageload; 
   
 
 }

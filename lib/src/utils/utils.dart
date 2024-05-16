@@ -57,3 +57,6 @@ Future<void> showMyDialog(BuildContext context,VoidCallback? tap,) async {
 const storage = FlutterSecureStorage();
 final Dio dio = Dio();
 String? accesstoken;
+const token =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI0NThlN2ZiZS0xNmQ3LTRiZWEtOTg2YS1kZDMzN2ViZTE0NzgiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTcxNDcyODc4MywiZXhwIjoxNzQ2MjY0NzgzfQ.p1_CaWqwG3q0A_-eRvZStLDByhl6xcy-LLf3s7X5NNE';
+

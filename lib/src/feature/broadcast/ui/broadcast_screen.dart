@@ -93,7 +93,7 @@ class _BroadcastscreenState extends State<Broadcastscreen> {
                   : widget.mode == Mode.VIEWER
                       ? ILSViewerView(
                           room: _room,
-                          livedata: widget.livedata?.liveid ?? "x",
+                          livedata: widget.livedata?.liveid ?? "",
                         )
                       : null
               : const Center(

@@ -39,17 +39,21 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
 
   @override
   void initState() {
-    widget.room.startHls(config: {
-      "layout": {
-        "type": "SPOTLIGHT",
-        "priority": "PIN",
-        "GRID": 20,
-      },
-      "mode": "video-and-audio",
-      "theme": "DARK",
-      "quality": "high",
-      "orientation": "portrait",
-    });
+    if (hlsState == "HLS_STOPPED") {
+      widget.room.startHls(config: {
+        "layout": {
+          "type": "SPOTLIGHT",
+          "priority": "PIN",
+          "GRID": 20,
+        },
+        "mode": "video-and-audio",
+        "theme": "DARK",
+        "quality": "high",
+        "orientation": "portrait",
+      });
+    } else if (hlsState == "HLS_STARTED" || hlsState == "HLS_PLAYABLE") {
+      widget.room.stopHls();
+    }
     super.initState();
     setMeetingEventListener();
     participants.putIfAbsent(
@@ -78,9 +82,22 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
 
   @override
   Widget build(BuildContext context) {
-    
+      if (hlsState == "HLS_STOPPED")
+                {
+                  widget.room.startHls(config: {
+                    "layout": {
+                      "type": "SPOTLIGHT",
+                      "priority": "PIN",
+                      "GRID": 20,
+                    },
+                    "mode": "video-and-audio",
+                    "theme": "DARK",
+                    "quality": "high",
+                    "orientation": "portrait",
+                  });
+                }
     liveidfunc();
-    print('kani$liveid');
+  
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -103,7 +120,6 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
                 children: [
                   // displaychat(),
 
-                 
                   StreamBuilder<QuerySnapshot>(
                     stream: FirebaseFirestore.instance
                         .collection('message')
@@ -141,6 +157,7 @@ class _ILSSpeakerViewState extends State<ILSSpeakerView> {
                                         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTql7QO1cKJ2vGPissyg8P5dvN0F0fmajfgtEoaIywuRg&s"),
                                     backgroundColor: Colors.transparent,
                                   ),
+                                 
                                   10.sp.horizontalSpace,
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.end,

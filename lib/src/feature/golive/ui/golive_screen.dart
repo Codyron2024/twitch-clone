@@ -38,7 +38,7 @@ class Golivescreen extends StatelessWidget {
           create: (context) => getIt<LivestreamCubit>(),
         )
       ],
-      child: BlocConsumer<GoliveCubit, GoliveState>(
+      child: BlocConsumer<LivestreamCubit, LivestreamState>(
         listener: (context, state) {
           state.maybeWhen(
             orElse: () => null,
@@ -62,6 +62,7 @@ class Golivescreen extends StatelessWidget {
           );
         },
         builder: (context, state) {
+         
           return SafeArea(
             child: SingleChildScrollView(
               child: Padding(
@@ -73,7 +74,7 @@ class Golivescreen extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () async {
-                            context.read<GoliveCubit>().pickfile();
+                            context.read<LivestreamCubit>().pickfile();
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -81,7 +82,7 @@ class Golivescreen extends StatelessWidget {
                               vertical: 20.0,
                             ),
                             child: state.maybeWhen(
-                              initial: (image) => image != null
+                              imageload: (image) => image != null
                                   ? SizedBox(
                                       height: 300,
                                       child: Image.file(File(image!.path)),
@@ -181,7 +182,7 @@ class Golivescreen extends StatelessWidget {
                     ),
                     state.maybeWhen(
                       loading: () => const CircularProgressIndicator(),
-                      initial: (image) => image != null
+                      imageload: (image) => image != null
                           ? Padding(
                               padding: const EdgeInsets.only(
                                 bottom: 10,
@@ -189,22 +190,8 @@ class Golivescreen extends StatelessWidget {
                               child: CustomButton(
                                 text: 'Go Live!',
                                 onTap: () async {
-                                  String? roomids =
-                                      await storage.read(key: 'roomid');
-
-                                  print('test$roomids');
-                                  context
-                                      .read<LivestreamCubit>()
-                                      .createmeeting();
-
-                                  Future.delayed(const Duration(seconds: 1),
-                                      () {
-                                    context.read<GoliveCubit>().addlive(
-                                        titleController.text,
-                                        2,
-                                        image,
-                                        roomids!);
-                                  });
+                                  context.read<LivestreamCubit>().createmeeting(
+                                      titleController.text, 2, image);
                                 },
                               ),
                             )
@@ -216,7 +203,6 @@ class Golivescreen extends StatelessWidget {
                                 text: 'Go Live!',
                                 onTap: () {
                                   showSnackBar(context, 'image is required');
-                        
                                 },
                               ),
                             ),

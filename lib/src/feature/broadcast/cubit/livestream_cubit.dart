@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:twitch_clone/src/data/model/livechat/livechat_model.dart';
 import 'package:twitch_clone/src/data/repository/livestream/livestream_repository.dart';
@@ -14,11 +15,17 @@ class LivestreamCubit extends Cubit<LivestreamState> {
   LivestreamCubit({required this.livestreamrepo})
       : super(const LivestreamState.initial());
   final Livestreamrepository livestreamrepo;
+  pickfile() async {
+    XFile? pickedImage = await pickImage();
+    if (pickedImage != null) {
+      emit(LivestreamState.imageload(pickedImage));
+    }
+  }
 
-  createmeeting() async {
+  createmeeting(String title, int watching, XFile? image) async {
     print('wew');
     emit(const LivestreamState.loading());
-    final res = await livestreamrepo.createMeeting();
+    final res = await livestreamrepo.createMeeting(title, watching, image);
     res.fold((l) => emit(LivestreamState.error(l)),
         (r) => emit(LivestreamState.success(r)));
   }

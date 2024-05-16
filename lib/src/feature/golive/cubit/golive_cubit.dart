@@ -18,25 +18,9 @@ class GoliveCubit extends Cubit<GoliveState> {
           image: null,
         ));
   final GoliveRepository goliverepo;
-  pickfile() async {
-    XFile? pickedImage = await pickImage();
-    if (pickedImage != null) {
-      emit(GoliveState.initial(image: pickedImage));
-    }
-  }
 
-  addlive(
-    String title,
-    int watching,
-    XFile? image,
-    String meetingid,
-  ) async {
-    emit(const GoliveState.loading());
-    var res = await goliverepo.addlive(title, watching, image, meetingid);
 
-    res.fold((l) => emit(GoliveState.error(l.toString())),
-        (r) => emit(GoliveState.success(r)));
-  }
+  
 
   sendmessage(String message, String liveid) async {
     var res = await goliverepo.sendmessage(message,liveid);
